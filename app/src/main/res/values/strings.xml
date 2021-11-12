@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Project2android</string>
+    <string name="field_required">Field required.</string>
+    <string name="validEmail">Email no valid</string>
+    <string name="addsuccessfuly">User has been added successfully</string>
+    <string name="addFailed">Failed adding User</string>
+    <string name="title_activity_maps">MapsActivity</string>
+</resources>
