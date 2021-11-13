@@ -53,14 +53,14 @@ public class FavorisAdapter extends RecyclerView.Adapter<FavorisAdapter.ViewHold
         holder.imageView1.setImageResource(rows.get(position).getImgPilot());
 
 //DELETE
-//        final Pilot singleItem = rows.get(position);
-//        holder.action.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                AppDataBase.getAppDatabase(context).pilotDao().delete(singleItem);
-//                FavorisAdapter.this.notifyChange(AppDataBase.getAppDatabase(context).pilotDao().getAll());
-//            }
-//        });
+        final Pilot singleItem = rows.get(position);
+        holder.action.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppDataBase.getAppDatabase(context).pilotDao().delete(singleItem);
+                FavorisAdapter.this.notifyChange(AppDataBase.getAppDatabase(context).pilotDao().getAll());
+            }
+        });
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

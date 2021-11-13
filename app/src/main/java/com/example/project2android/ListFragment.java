@@ -32,7 +32,7 @@ public class ListFragment extends Fragment {
     private String mParam2;
 
     String S1[]={"John Doe","Franc Marcel","Henry Montagomory","Emilio Wahsington"};
-    String dec[]={"dec1","dec2","abcd","dec4"};
+    String dec[]={"dec1jhghjghjghjghjghjghjghjghjghjghjghjghjghjghjghjghjghjghjghjghjghjgjhhj","dec2","abcd","dec4"};
 
     Integer Images[]= {R.drawable.madridrio,R.drawable.skatepark_boadilla,R.drawable.skatepark_getafe, R.drawable.madridrio};
 

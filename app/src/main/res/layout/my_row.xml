@@ -8,14 +8,13 @@
     android:layout_marginTop="5dp"
     android:padding="8dp"
     android:layout_centerHorizontal="true"
-    android:background="@color/white"
+    android:background="#ccc"
     android:id="@+id/container">
 
     <ImageView
         android:id="@+id/imgPilote"
         android:layout_width="80dp"
         android:layout_height="80dp"
-
         android:layout_gravity="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -28,6 +27,7 @@
         android:layout_gravity="center"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="5dp"
+        android:text="name"
         android:textSize="20dp"
         app:layout_constraintLeft_toRightOf="@id/imgPilote"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,6 +37,7 @@
         android:layout_width="182dp"
         android:layout_height="28dp"
         android:layout_gravity="center"
+        android:text="description"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="40dp"
         android:textSize="20dp"

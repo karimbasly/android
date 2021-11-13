@@ -44,11 +44,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.tv_log_singUp:
-                startActivity(new Intent(this,SignupActivity.class));
+                startActivity(new Intent(this,MapsActivity.class));
                 break;
 
             case R.id.tv_forgetPassword:
-                startActivity(new Intent(this,MapsActivity.class));
+                startActivity(new Intent(this,HomeActivity2.class));
                 break;
         }
     }
