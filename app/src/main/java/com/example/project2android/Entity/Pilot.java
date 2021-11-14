@@ -17,8 +17,6 @@ public class Pilot implements Serializable {
     private String decPilot;
     @ColumnInfo(name = "pilot_img")
     private Integer imgPilot;
-
-
     public Pilot(String namePilot, String decPilot, Integer imgPilot) {
         this.namePilot = namePilot;
         this.decPilot = decPilot;

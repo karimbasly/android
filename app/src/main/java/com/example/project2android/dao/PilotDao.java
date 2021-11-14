@@ -12,7 +12,6 @@ public interface PilotDao {
     @Insert
     void insertOne(Pilot pilot);
     @Delete
-
     void delete(Pilot pilot);
     @Query("SELECT * FROM pilot_table")
     List<Pilot> getAll();

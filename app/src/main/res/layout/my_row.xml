@@ -5,52 +5,49 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="5dp"
+    android:layout_marginRight="5dp"
     android:padding="8dp"
-    android:layout_centerHorizontal="true"
     android:background="#ccc"
     android:id="@+id/container">
 
     <ImageView
         android:id="@+id/imgPilote"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="84dp"
+        android:layout_height="93dp"
         android:layout_gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/nomPilote"
-        android:layout_width="128dp"
-        android:layout_height="27dp"
+        android:layout_width="195dp"
+        android:layout_height="28dp"
         android:layout_gravity="center"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="5dp"
         android:text="name"
-        android:textSize="20dp"
+        android:textSize="18dp"
         app:layout_constraintLeft_toRightOf="@id/imgPilote"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/decPilote"
-        android:layout_width="182dp"
-        android:layout_height="28dp"
+        android:layout_width="218dp"
+        android:layout_height="65dp"
         android:layout_gravity="center"
-        android:text="description"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="40dp"
-        android:textSize="20dp"
+        android:text="description"
+        android:textSize="18dp"
         app:layout_constraintLeft_toRightOf="@id/imgPilote"
         app:layout_constraintTop_toTopOf="@+id/nomPilote" />
+
     <ImageView
         android:id="@+id/btnStar"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="52dp"
+        android:layout_height="51dp"
         android:layout_gravity="center"
-        android:background="@drawable/ic_star"
-        android:backgroundTint="@color/black"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/ic_baseline_favorite_24"
+        android:backgroundTint="@color/white"
         app:layout_constraintRight_toRightOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

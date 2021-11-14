@@ -31,11 +31,17 @@ public class ListFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    String S1[]={"John Doe","Franc Marcel","Henry Montagomory","Emilio Wahsington"};
-    String dec[]={"dec1jhghjghjghjghjghjghjghjghjghjghjghjghjghjghjghjghjghjghjghjghjghjgjhhj","dec2","abcd","dec4"};
+    String S1[]={"Madrid Río","Boadilla del Monte ","Getafe","Skatepark Alcobendas","Torrejón de Ardoz Urban Zone"};
+    String dec[]={"Cómo llegar: tienes que bajarte en la parada de metro Legazpi ","Cómo llegar: hay que pillar el autobús interurbano 574."
+            ,"Cómo llegar: La parada de metro es Conservatorio (línea 12)"
+            ,"Cómo llegar: tienes que ir hasta el metro Manuel de Falla (línea 10).","Cómo llegar: tienes que coger el cercanías C-2 hasta  la Plaza de Toros"};
 
-    Integer Images[]= {R.drawable.madridrio,R.drawable.skatepark_boadilla,R.drawable.skatepark_getafe, R.drawable.madridrio};
-
+    Integer Images[]= {R.drawable.madridrio,R.drawable.skatepark_boadilla,R.drawable.skatepark_getafe, R.drawable.skateparkalco,R.drawable.skateparktorrejon};
+    String Info[]={"El skatepark de Madrid Río situado junto a la parada del metro Legazpi es un de los más conocidos y frecuentados. Situado en el interior del Parque Arganzuela, este skatepark es perfecto para iniciarte en el surfskate o practicar street skate. Bowls abiertos y cerrados, planos inclinados, rails de bajadas, dunas… las opciones son ilimitadas.",
+            "El skatepark Boadilla del Monte es el más pequeño de los anteriores. Sin embargo, pese a su menor tamaño ofrece opciones muy interesante para bowl y street skate. Además se permite la entrada a bikes. Lo mejor del bowl es que cuenta con dos medidas. Una más baja y otra más alta. Lo cual te permite ir probando poco a poco antes de aventurarte a entrar en una más grande.",
+            "El skatepark de Getafe, se encuentra también a las afueras de la ciudad. Construido en 2014, cuenta con un bowl con pin, planos inclinados, hubbas y distintos módulos. Un skatepark perfecto tanto para principiantes como para skaters avanzados. Recomendable para aquellos que quieran darle al street y al skate surf. Es ideal para los que están empezando a darle caña al surfskate. Ya que dispone de bowls no muy grandes ni con mucha pendiente.",
+            "El skatepark de Alcobendas, se encuentra en el polideportivo municipal de Valdelafuentes de Alcobendas. Totalmente renovado, es uno de los skate parks de Madrid más frecuentado. Tiene dos bañeras profundas conectadas con una tercera, que te permitirán gozarla y disfrutar como un niño con el surfskate. Conocido por lo locales como Nepal. Un Skatepark que bien merece una visita aunque sea para ver el nivelazo de los locales.",
+            "El skatepark Torrejón de Ardoz se encuentra a las afueras de la ciudad. Una pista de gran calidad, con muchas posibilidades y de gran tamaño. Cuenta con un bowl medio, bordillos para todos los gustos, sección de escaleras y hubbas, zonas para el breakdance y muros graffiteros. Construido en 2008 es uno de los mejores skateparks de Madrid para vivir la cultura urbana."};
 
     RecyclerView RecView;
 

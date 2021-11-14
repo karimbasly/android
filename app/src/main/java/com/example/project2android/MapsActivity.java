@@ -31,21 +31,12 @@ import com.google.android.gms.tasks.Task;
 public class MapsActivity extends FragmentActivity  {
     private ActivityMapsBinding binding;
     SupportMapFragment mapFragment;
-
     FusedLocationProviderClient client ;
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-
-
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -56,9 +47,7 @@ public class MapsActivity extends FragmentActivity  {
             getCurrentLocation();
         } else { ActivityCompat.requestPermissions(MapsActivity.this,new String[]
                 {Manifest.permission.ACCESS_FINE_LOCATION},44);
-
         }
-
     }
 
 
@@ -79,18 +68,14 @@ public class MapsActivity extends FragmentActivity  {
                                         MarkerOptions option =new MarkerOptions().position(latLng).title("I'M there");
                                         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,10));
                                         googleMap.addMarker(option);
-
                                         System.out.println("current location :" + latLng);
-
                                     }
                                 });
-
                             }
                         }
                     });
         }
     }
-
     @SuppressLint("MissingSuperCall")
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

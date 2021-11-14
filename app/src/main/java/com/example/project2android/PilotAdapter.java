@@ -53,7 +53,6 @@ public class PilotAdapter extends RecyclerView.Adapter<PilotAdapter.ViewHolder> 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-
         holder.tv_name.setText(names[position]);
         holder.imageView1.setBackgroundResource(images[position]);
         holder.tv_dec.setText(descriptions[position]);
@@ -63,29 +62,15 @@ public class PilotAdapter extends RecyclerView.Adapter<PilotAdapter.ViewHolder> 
         row.setDecPilot(descriptions[position]);
         AppDataBase database = AppDataBase.getAppDatabase(context);
         rowList = database.pilotDao().getAll();
-//        rowList.get(position).setDecPilot(descriptions[position]);
-//
-//        System.out.println("Result:" + rowList.contains(row));
-//        System.out.println("Name:" + rowList.get(position).getNamePilot());
-//        System.out.println("dec:"+rowList.get(position).getDecPilot());
         if(rowList.contains(row))
         {
             DrawableCompat.setTint(holder.imageView2.getDrawable(),context.getColor(R.color.cardview_dark_background));
-
         }
-
-
-        holder.imageView2.setOnClickListener(new View.OnClickListener()
-
-        {
+        holder.imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v){
-
-                Toast toast = Toast.makeText(context, "room time !", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(context, "ADD to Favorite ", Toast.LENGTH_SHORT);
                 toast.show();
-
-
-
                 //insert
                 favorisAdapter = new FavorisAdapter(context, rowList);
                 Pilot row = new Pilot();
@@ -100,8 +85,6 @@ public class PilotAdapter extends RecyclerView.Adapter<PilotAdapter.ViewHolder> 
                     Toast toast2 = Toast.makeText(context, "Exists", Toast.LENGTH_SHORT);
                     toast2.show();
                 }
-
-
             }
         });
 
@@ -117,15 +100,12 @@ public class PilotAdapter extends RecyclerView.Adapter<PilotAdapter.ViewHolder> 
         ImageView imageView1,imageView2;
         TextView tv_name;
         TextView tv_dec;
-
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tv_name = itemView.findViewById(R.id.nomPilote);
             imageView1 = itemView.findViewById(R.id.imgPilote);
             tv_dec = itemView.findViewById(R.id.decPilote);
             imageView2 = itemView.findViewById(R.id.btnStar);
-
         }
     }
 }

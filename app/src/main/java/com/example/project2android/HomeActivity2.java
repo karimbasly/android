@@ -14,7 +14,7 @@ public class HomeActivity2 extends AppCompatActivity {
     public static final String sharedPrefFile ="tn.esprit.myapplication";
 
 
-    ImageButton btF1,btF2,btF3;
+    ImageButton btF1,btF2,btF3,btF4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +22,13 @@ public class HomeActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_home2);
         mPreferences = getSharedPreferences(sharedPrefFile, MODE_PRIVATE);
         SharedPreferences.Editor preferencesEditor = mPreferences.edit();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragSpace,new ListFragment()).commit();
 
 
         btF1= findViewById(R.id.button1);
         btF2= findViewById(R.id.favorisBtn);
         btF3=findViewById(R.id.imageMap);
+        btF4=findViewById(R.id.info_User);
 
         btF1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +46,13 @@ public class HomeActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity2.this,MapsActivity.class));
+
+            }
+        });
+        btF4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity2.this,UserInfo.class));
 
             }
         });

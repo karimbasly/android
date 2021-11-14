@@ -84,7 +84,6 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
             if (!validateLinkForm()) {
                 return;
             }
-            int score =0;
             String name=et_name.getText().toString();
             String email =et_email.getText().toString();
             String password =et_password.getText().toString();
@@ -93,7 +92,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
-                                User user =new User(name,email,score);
+                                User user =new User(name,email);
                                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                                 DatabaseReference myUsersRef = database.getReference("users");
                                 myUsersRef
