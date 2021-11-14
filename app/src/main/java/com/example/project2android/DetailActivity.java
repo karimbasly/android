@@ -17,9 +17,11 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+        //INTI
         imageView=findViewById(R.id.imgDetail);
         tvName=findViewById(R.id.nomDetail);
         tvDescription=findViewById(R.id.decDetail);
+
         pilot= (Pilot) getIntent().getExtras().getSerializable("pilotDetail");
         imageView.setImageResource(pilot.getImgPilot());
         tvName.setText(pilot.getNamePilot());

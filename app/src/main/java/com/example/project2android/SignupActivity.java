@@ -93,7 +93,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
-                                User user =new User(name,email);
+                                User user =new User(name,email,score);
                                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                                 DatabaseReference myUsersRef = database.getReference("users");
                                 myUsersRef

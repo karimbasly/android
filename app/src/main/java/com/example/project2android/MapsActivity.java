@@ -25,22 +25,26 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.project2android.databinding.ActivityMapsBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
 public class MapsActivity extends FragmentActivity  {
-
-    private GoogleMap mMap;
-private ActivityMapsBinding binding;
+    private ActivityMapsBinding binding;
     SupportMapFragment mapFragment;
 
-FusedLocationProviderClient client ;
+    FusedLocationProviderClient client ;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-     binding = ActivityMapsBinding.inflate(getLayoutInflater());
-     setContentView(binding.getRoot());
+        binding = ActivityMapsBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -62,28 +66,28 @@ FusedLocationProviderClient client ;
     private void getCurrentLocation() {
         LocationManager locationManager =(LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER )|| locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)){
-            client.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
-                @Override
-                public void onComplete(@NonNull Task<Location> task) {
-                    //INt location
+            client.getLastLocation()
+                    .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                        @Override
+                        public void onSuccess(Location location) {
 
-                    Location location =task.getResult();
-                    if(location != null){
-                        mapFragment.getMapAsync(new OnMapReadyCallback() {
-                            @Override
-                            public void onMapReady(@NonNull GoogleMap googleMap) {
-                                LatLng latLng= new LatLng(location.getLatitude(), location.getLongitude());
-                                MarkerOptions option =new MarkerOptions().position(latLng).title("I'M there");
-                                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,10));
-                                googleMap.addMarker(option);
-                                System.out.println("current location :" + latLng);
+                            if(location != null){
+                                mapFragment.getMapAsync(new OnMapReadyCallback() {
+                                    @Override
+                                    public void onMapReady(@NonNull GoogleMap googleMap) {
+                                        LatLng latLng= new LatLng(location.getLatitude(), location.getLongitude());
+                                        MarkerOptions option =new MarkerOptions().position(latLng).title("I'M there");
+                                        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,10));
+                                        googleMap.addMarker(option);
+
+                                        System.out.println("current location :" + latLng);
+
+                                    }
+                                });
 
                             }
-                        });
-
-                       }
-                    }
-            });
+                        }
+                    });
         }
     }
 
@@ -96,15 +100,5 @@ FusedLocationProviderClient client ;
             }
         }
     }
-
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
 
 }

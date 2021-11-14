@@ -44,13 +44,12 @@ xmlns:tools="http://schemas.android.com/tools"
         app:layout_constraintLeft_toRightOf="@id/imgPilotefav"
         app:layout_constraintTop_toTopOf="@+id/nomPilotefav" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnSupp"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
-        android:background="@drawable/ic_star"
-        android:backgroundTint="@color/black"
+        app:srcCompat="@drawable/ic_baseline_favorite_24"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 

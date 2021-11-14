@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -70,10 +71,6 @@ public class FavorisAdapter extends RecyclerView.Adapter<FavorisAdapter.ViewHold
 
             }
         });
-
-
-
-
     }
 
 
@@ -90,19 +87,10 @@ public class FavorisAdapter extends RecyclerView.Adapter<FavorisAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView1;
         TextView textView,textView2;
-        Button action;
+        ImageButton action;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-//            itemView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent=new Intent(v.getContext(),HomeActivity2.class);
-//                    intent.putExtra("a",rows.get(getAdapterPosition()));
-//                    v.getContext().startActivity(intent);
-//
-//                }
-//            });
             textView = itemView.findViewById(R.id.nomPilotefav);
             textView2 = itemView.findViewById(R.id.decfavv);
             imageView1 = itemView.findViewById(R.id.imgPilotefav);
